@@ -21,7 +21,7 @@ if __name__ == "__main__":
     port = 5000
 
     # Check if the port is already in use
-    output = subprocess.check_output(['sudo', 'lsof', '-i', f':{port}'])
+    output = subprocess.check_output(['lsof', '-i', f':{port}'])
     if output:
     # If the port is in use, extract the PID of the process
         pid = int(output.split()[10])
